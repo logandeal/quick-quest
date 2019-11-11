@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function EventPicker({ events }) {
+export default function EventPicker({ events, onPickEvents }) {
   const [pickedEvents, setPickedEvents] = useState([]);
 
   function onChange(name, isChecked) {
@@ -8,11 +8,15 @@ export default function EventPicker({ events }) {
       event => event.name !== name
     );
     if (!isChecked) {
-      return setPickedEvents(pickedEventsWithoutEvent);
+      setPickedEvents(pickedEventsWithoutEvent);
+      onPickEvents(pickedEventsWithoutEvent);
+      return;
     }
-    return setPickedEvents(
-      pickedEventsWithoutEvent.concat(events.find(event => event.name === name))
+    const newPickedEvents = pickedEventsWithoutEvent.concat(
+      events.find(event => event.name === name)
     );
+    setPickedEvents(newPickedEvents);
+    onPickEvents(newPickedEvents);
   }
 
   function isChecked(name) {
@@ -34,7 +38,6 @@ export default function EventPicker({ events }) {
           </li>
         ))}
       </ul>
-      Picked: {pickedEvents.map(event => event.name).join(", ")}
     </div>
   );
 }
