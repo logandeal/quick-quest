@@ -6,7 +6,9 @@ export default function Schedule({ pickedEvents }) {
     <div>
       <ul>
         {getSchedule(pickedEvents).map(event => (
-          <li>{event.name}</li>
+          <li>
+            {event.name}: {event.time}
+          </li>
         ))}
       </ul>
     </div>
