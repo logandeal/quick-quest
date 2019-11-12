@@ -26,7 +26,7 @@ export default function EventPicker({ events, onPickEvents }) {
   return (
     <fieldset>
       <legend>
-        Pick the activities you would like to schedule during your visit.
+        Pick the activities you would like to schedule during your day visit.
       </legend>
 
       {events.map(event => (
