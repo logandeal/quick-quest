@@ -2,3 +2,16 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+.Schedule_Table {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.Schedule_Caption {
+  border-bottom: solid 1px black;
+}
+
+.Schedule_EventName {
+  text-align: left;
+}

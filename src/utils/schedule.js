@@ -19,7 +19,6 @@ export function isTimeAvailable(time, duration, schedule) {
   for (const item of schedule) {
     const itemStart = timeInMinutes(item.time);
     const itemEnd = itemStart + item.duration;
-    console.log(start, end, itemStart, itemEnd);
     if (start <= itemStart && end >= itemEnd) {
       return false;
     }
@@ -44,7 +43,7 @@ function findSchedule(schedule = [], pickedEvents) {
       const newSchedule = schedule.concat({
         name: event.name,
         duration: event.duration,
-        time
+        time: minutesToTime(timeInMinutes(time))
       });
       if (nextEvents.length === 0) {
         return newSchedule;

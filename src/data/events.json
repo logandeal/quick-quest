@@ -4,8 +4,8 @@
     "duration": 60,
     "times": ["9:00", "11:00", "13:00", "15:00"]
   },
-  { "name": "Foo", "duration": 30, "times": ["9:00", "14:00"] },
-  { "name": "Morning Celebration", "duration": 30, "times": ["9:00"] },
+  { "name": "Kangaroo Feeding", "duration": 30, "times": ["9:00", "14:00"] },
+  { "name": "Safari Walk", "duration": 30, "times": ["9:00"] },
   {
     "name": "4D Ride",
     "duration": 15,

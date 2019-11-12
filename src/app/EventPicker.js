@@ -24,20 +24,22 @@ export default function EventPicker({ events, onPickEvents }) {
   }
 
   return (
-    <div>
-      <ul>
-        {events.map(event => (
-          <li>
-            <input
-              type="checkbox"
-              id={event.name}
-              onChange={({ target }) => onChange(event.name, target.checked)}
-              checked={isChecked(event.name)}
-            />
-            <label for="{event.name}">{event.name}</label>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <fieldset>
+      <legend>
+        Pick the activities you would like to schedule during your visit.
+      </legend>
+
+      {events.map(event => (
+        <div>
+          <input
+            type="checkbox"
+            id={event.name}
+            onChange={({ target }) => onChange(event.name, target.checked)}
+            checked={isChecked(event.name)}
+          />
+          <label for="{event.name}">{event.name}</label>
+        </div>
+      ))}
+    </fieldset>
   );
 }
