@@ -24,8 +24,11 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Zoo Scheduler</h1>
+      <h1>----------- QuickQuest -----------</h1>
+      <h3>Streamline your Day</h3>
+      <h4>Featuring Google/Apple Maps and Voice Recognition</h4>
       <EventPicker events={events} onPickEvents={setPickedEvents} />
+      <p>*Click here to customize scheduling options*</p>
       <Schedule pickedEvents={pickedEvents} />
     </div>
   );

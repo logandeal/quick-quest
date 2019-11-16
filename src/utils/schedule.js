@@ -45,9 +45,6 @@ function findSchedule(schedule = [], pickedEvents) {
         duration: event.duration,
         time: minutesToTime(timeInMinutes(time))
       });
-      if (nextEvents.length === 0) {
-        return newSchedule;
-      }
       const maybeSchedule = findSchedule(newSchedule, nextEvents);
       if (maybeSchedule.length > 0) {
         return maybeSchedule;
